@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 // import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import { createUser } from '../features/userDetail'
+import { useNavigate } from 'react-router-dom'
 
 const Create = () => {
+  const navigate=useNavigate();
     const [users,setUsers]=useState({})
     const dispatch=useDispatch();
     const getUserData=(e)=>{
         
 
-        setUsers({...users,[e.target.name]:e.target.value})
+      setUsers({...users,[e.target.name]:e.target.value});
         
     }
     const handleSubmit=(e)=>{
-        console.log(users);
         e.preventDefault();
         dispatch(createUser(users));
+        navigate('/read')
     }
     
 
