@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 // import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import { createUser } from '../features/userDetail'
 import { useNavigate } from 'react-router-dom'
+import { showUser } from '../features/userDetail'
 
 const Create = () => {
+  // const dispatch=useDispatch();
+ 
+  
   const navigate=useNavigate();
     const [users,setUsers]=useState({})
     const dispatch=useDispatch();

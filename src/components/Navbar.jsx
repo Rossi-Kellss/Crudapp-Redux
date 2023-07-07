@@ -1,7 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+    const allUsers=useSelector((state)=>state.app.users);
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -14,7 +16,7 @@ const Navbar = () => {
                                 <Link to='/' className="nav-link active" aria-current="page">Create post</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/read">All posts</Link>
+                                <Link className="nav-link" to="/read">All posts {" "} {allUsers.length}</Link>
                             </li>
                            
                         </ul>
